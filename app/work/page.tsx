@@ -5,7 +5,7 @@ import { caseStudies } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Selected work from Bit Axis, including Quizly and Whyeka.",
+  description: "SaaS products and digital solutions designed and built by Bit Axis, including Quizly and Whyeka.",
 };
 
 export default function WorkPage() {
@@ -16,11 +16,11 @@ export default function WorkPage() {
           <Reveal>
             <p className="text-xs tracking-[0.18em] text-teal uppercase">Work</p>
             <h1 className="mt-4 max-w-3xl font-serif text-5xl leading-[0.98] tracking-tight text-balance md:text-7xl">
-              Products the studio has designed and built.
+              Solutions designed and built around real needs.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              Quizly and Whyeka. The write-ups stay specific, and they stay short
-              where the story is still being set.
+              From a competitive-exam learning app to a positioning and thought-leadership site, see
+              how product design and development can solve different problems.
             </p>
           </Reveal>
         </div>

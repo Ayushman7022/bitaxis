@@ -8,7 +8,7 @@ import { services } from "@/content/site";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Website development, UI/UX, Android development, and n8n automation for small and medium businesses.",
+    "Custom SaaS platforms, web apps, product design, Android apps, and n8n automation built around real business needs.",
 };
 
 const rail = {
@@ -24,13 +24,14 @@ export default function ServicesPage() {
       <section className="axis-field border-b border-line">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 pt-12 pb-14 md:grid-cols-[1.2fr_0.8fr] md:pt-20 md:pb-20">
           <Reveal>
-            <p className="text-xs tracking-[0.18em] text-teal uppercase">Services</p>
+            <p className="text-xs tracking-[0.18em] text-teal uppercase">What we build</p>
             <h1 className="mt-4 max-w-3xl font-serif text-5xl leading-[0.98] tracking-tight text-balance md:text-7xl">
-              Website, UI/UX, Android, and n8n automation.
+              SaaS products, designed around your business.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              Most projects are one of these. Some need two. Each one is scoped to a
-              business that has a real job to do.
+              From product thinking and interface design to web, Android, and
+              workflow development, we help turn real business needs into software
+              people can use.
             </p>
           </Reveal>
           <Reveal delay={2}>
@@ -102,7 +103,7 @@ export default function ServicesPage() {
                   href="/contact"
                   className={`mt-8 inline-flex px-5 py-3 text-sm text-paper transition-transform duration-200 hover:-translate-y-0.5 ${rail[service.tone]}`}
                 >
-                  Start a project
+                  Talk about this solution
                 </Link>
               </Reveal>
             </div>

@@ -61,7 +61,7 @@ export function SiteHeader() {
             href="/contact"
             className="hidden bg-green px-4 py-2 text-sm text-paper transition-transform duration-200 hover:bg-green-deep hover:-translate-y-0.5 sm:inline-flex"
           >
-            Start a project
+            Talk about a product
           </Link>
           <button
             type="button"
@@ -105,7 +105,7 @@ export function SiteHeader() {
             href="/contact"
             className="mt-2 rounded-xl bg-green px-4 py-3 text-center text-paper"
           >
-            Start a project
+            Talk about a product
           </Link>
         </nav>
       </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
-import { ServiceVisual, WorkflowVisual } from "@/components/service-visual";
+import { ServiceVisual } from "@/components/service-visual";
 import { StartBand } from "@/components/start-band";
 import { WorkPanel } from "@/components/work-panel";
 import { caseStudies, home, process, services } from "@/content/site";
@@ -10,167 +10,88 @@ export const metadata: Metadata = {
   description: home.lead,
 };
 
-const audiences = ["Clinics", "Institutes", "Shops", "Product teams"];
-
-const tileTone = {
-  teal: "bg-teal text-paper",
-  copper: "bg-copper text-paper",
-  azure: "bg-azure text-paper",
-  violet: "bg-violet text-paper",
-} as const;
-
-const rowTone = {
-  teal: "tone-teal",
-  copper: "tone-copper",
-  azure: "tone-azure",
-  violet: "tone-violet",
-} as const;
+const audiences = ["Clinics", "Institutes", "Shops", "Local service teams", "Product teams"];
+const tones = ["teal", "copper", "azure", "violet"] as const;
 
 export default function HomePage() {
   return (
     <main>
-      <section className="axis-field">
-        <div className="mx-auto max-w-6xl px-5 pt-10 pb-16 md:pt-16 md:pb-20">
-          <Reveal>
-            <p className="text-xs tracking-[0.18em] text-teal uppercase">{home.eyebrow}</p>
-            <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-[0.98] tracking-tight text-balance md:text-7xl">
-              {home.title}
+      <section className="home-hero relative overflow-hidden">
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 pb-14 pt-14 md:min-h-[650px] md:grid-cols-[1fr_0.94fr] md:gap-8 md:pb-20 md:pt-20">
+          <Reveal className="relative z-10">
+            <p className="eyebrow"><span className="eyebrow-dot" /> SaaS products, made for real business needs</p>
+            <h1 className="hero-title mt-7 max-w-3xl font-serif tracking-tight text-balance">
+              Software built around <span>your business.</span>
             </h1>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">{home.lead}</p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex justify-center bg-green px-5 py-3 text-sm text-paper transition-transform duration-200 hover:-translate-y-0.5 hover:bg-green-deep"
-              >
-                Start a project
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted md:text-xl">
+              We design and build SaaS products that make complex work simpler—from web and Android apps to connected workflows that help your team serve customers.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="button-primary">
+                Talk about your product <span aria-hidden="true">↗</span>
               </Link>
-              <Link
-                href="/work"
-                className="inline-flex justify-center border border-ink bg-paper/70 px-5 py-3 text-sm transition-colors hover:bg-ink hover:text-paper"
-              >
-                See the work
+              <Link href="/work" className="button-secondary">
+                See what we&apos;ve built <span aria-hidden="true">→</span>
               </Link>
+            </div>
+            <div className="mt-10 flex items-center gap-3 text-sm text-muted">
+              <span className="hero-check" aria-hidden="true">✓</span>
+              <span>Product thinking, design, and development in one team.</span>
             </div>
           </Reveal>
 
-          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal delay={2} className="relative z-10 mx-auto w-full max-w-[500px]">
+            <div className="hero-story" aria-label="Illustration showing a business need becoming a digital solution">
+              <div className="story-orbit story-orbit-a" />
+              <div className="story-orbit story-orbit-b" />
+              <div className="story-label story-label-top"><span className="story-label-dot" /> SAAS BUILT AROUND REAL WORK</div>
+              <div className="story-need">
+                <span className="story-step">THE BUSINESS NEED</span>
+                <strong>Your team needs software that fits the way your business works.</strong>
+                <div className="need-people" aria-hidden="true"><i>☺</i><i>↗</i><i>✳</i></div>
+              </div>
+              <div className="story-connector" aria-hidden="true"><i /><i /><i /><b>↓</b></div>
+              <div className="story-solution">
+                <div className="solution-top"><span><b>✳</b> BIT AXIS / SAAS PRODUCT DEVELOPMENT</span><span>✧</span></div>
+                <div className="solution-title">A product shaped around your customers and team</div>
+                <div className="solution-options">
+                  <div><span className="solution-icon icon-web">↗</span><b>Web app</b><small>For your service</small></div>
+                  <div><span className="solution-icon icon-product">◫</span><b>Android</b><small>For your users</small></div>
+                  <div><span className="solution-icon icon-flow">⤳</span><b>Automation</b><small>For your team</small></div>
+                </div>
+              </div>
+              <div className="story-caption"><span>UNDERSTAND THE WORK</span><span>DESIGN THE PRODUCT</span><span>BUILD FOR REAL USERS</span></div>
+              <span className="story-spark story-spark-a" aria-hidden="true">✳</span>
+              <span className="story-spark story-spark-b" aria-hidden="true">✦</span>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="service-intro" aria-label="What Bit Axis builds">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-5 md:flex-row md:items-center md:justify-between">
+          <p className="service-intro-label">From the first product question to launch</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-3">
             {services.map((service, index) => (
-              <Reveal key={service.id} delay={(index + 1) as 1 | 2 | 3 | 4}>
-                <Link
-                  href={service.href}
-                  className={`lift group block min-h-52 overflow-hidden p-5 ${tileTone[service.tone]}`}
-                >
-                  <p className="text-xs tracking-[0.16em] uppercase opacity-70">
-                    {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <ServiceVisual id={service.id} className="mt-2 h-20 w-full" />
-                  <h2 className="mt-2 font-serif text-2xl tracking-tight">{service.shortName}</h2>
-                </Link>
-              </Reveal>
+              <Link key={service.id} href={service.href} className="capability-link">
+                <span className={`capability-mark capability-${tones[index]}`} aria-hidden="true">0{index + 1}</span>
+                {service.shortName}<span className="capability-arrow" aria-hidden="true">↗</span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-ink text-paper">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-end md:py-20">
+      <section className="work-section">
+        <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
           <Reveal>
-            <h2 className="max-w-md font-serif text-4xl tracking-tight text-balance md:text-5xl">
-              {home.audienceTitle}
-            </h2>
-          </Reveal>
-          <Reveal delay={1}>
-            <p className="text-lg leading-relaxed text-paper/80">{home.audience}</p>
-            <ul className="mt-8 grid grid-cols-2 gap-px bg-paper/15">
-              {audiences.map((item) => (
-                <li key={item} className="bg-ink px-4 py-3 text-sm">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 py-20">
-        <Reveal>
-          <div className="flex items-end justify-between gap-6">
-            <h2 className="font-serif text-4xl tracking-tight md:text-5xl">What we offer</h2>
-            <Link href="/services" className="text-sm text-green hover:underline">
-              All services
-            </Link>
-          </div>
-        </Reveal>
-        <ol className="mt-8">
-          {services.map((service, index) => (
-            <li key={service.id}>
-              <Reveal delay={(Math.min(index, 3) + 1) as 1 | 2 | 3 | 4}>
-                <Link
-                  href={service.href}
-                  className={`${rowTone[service.tone]} group grid gap-4 border-b border-line py-8 transition-colors hover:bg-cream/70 md:grid-cols-[6.5rem_1fr_auto] md:items-center md:py-10`}
-                >
-                  <span
-                    className="font-serif text-5xl"
-                    style={{ color: "color-mix(in srgb, var(--tone) 55%, transparent)" }}
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span>
-                    <span className="block font-serif text-3xl tracking-tight md:text-4xl">
-                      {service.name}
-                    </span>
-                    <span className="mt-3 block max-w-xl leading-relaxed text-muted">
-                      {service.summary}
-                    </span>
-                  </span>
-                  <span className="text-sm" style={{ color: "var(--tone)" }}>
-                    See the scope
-                  </span>
-                </Link>
-              </Reveal>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section className="bg-violet text-paper">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-20">
-          <Reveal>
-            <p className="text-xs tracking-[0.18em] uppercase opacity-70">Automation</p>
-            <h2 className="mt-3 font-serif text-4xl tracking-tight text-balance md:text-5xl">
-              n8n workflows that finish the handoff.
-            </h2>
-            <p className="mt-5 max-w-md text-lg leading-relaxed text-paper/80">
-              A form is submitted, a lead lands, a reminder is due. The workflow
-              writes the row, sends the message, and tells the team. No extra
-              copy-paste in the middle.
-            </p>
-            <Link
-              href="/services#automation"
-              className="mt-8 inline-flex bg-paper px-5 py-3 text-sm text-violet transition-transform duration-200 hover:-translate-y-0.5"
-            >
-              See automation
-            </Link>
-          </Reveal>
-          <Reveal delay={2}>
-            <div className="bg-paper/10 p-4 md:p-6">
-              <WorkflowVisual className="h-48 w-full md:h-56" />
+            <div className="section-heading">
+              <div><p className="eyebrow">Selected work</p><h2 className="mt-4 font-serif text-4xl tracking-tight md:text-5xl">Real products. Thoughtful execution.</h2></div>
+              <p className="max-w-sm leading-relaxed text-muted">A look at SaaS products and digital experiences we&apos;ve designed and built to solve real needs.</p>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      <section className="bg-cream">
-        <div className="mx-auto max-w-6xl px-5 py-20">
-          <Reveal>
-            <div className="flex items-end justify-between gap-6">
-              <h2 className="font-serif text-4xl tracking-tight md:text-5xl">Selected work</h2>
-              <Link href="/work" className="text-sm text-green hover:underline">
-                All work
-              </Link>
-            </div>
-          </Reveal>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="mt-9 grid gap-4 md:grid-cols-2">
             {caseStudies.map((study, index) => (
               <Reveal key={study.slug} delay={(index + 1) as 1 | 2}>
                 <WorkPanel study={study} />
@@ -180,28 +101,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section>
-        <div className="mx-auto max-w-6xl px-5 py-20">
-          <Reveal>
-            <h2 className="font-serif text-4xl tracking-tight md:text-5xl">How a project runs</h2>
-          </Reveal>
-          <div className="relative mt-12">
-            <span className="absolute top-5 right-6 left-6 hidden h-px bg-line md:block" />
-            <ol className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
-              {process.map((step, index) => (
-                <li key={step.step} className="relative">
-                  <Reveal delay={(index + 1) as 1 | 2 | 3 | 4}>
-                    <span className="relative z-10 flex h-10 w-10 items-center justify-center bg-green font-serif text-sm text-paper">
-                      {step.step}
-                    </span>
-                    <h3 className="mt-5 font-serif text-2xl tracking-tight">{step.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">{step.text}</p>
-                  </Reveal>
-                </li>
-              ))}
-            </ol>
+      <section className="section-pad mx-auto max-w-6xl px-5">
+        <Reveal>
+          <div className="section-heading">
+            <div><p className="eyebrow">What we build</p><h2 className="mt-4 max-w-2xl font-serif text-4xl tracking-tight text-balance md:text-5xl">SaaS products, from first flow to launch.</h2></div>
+            <p className="max-w-sm leading-relaxed text-muted">Whether you need a complete product or one essential part of it, we shape the build around the way your business and customers work.</p>
           </div>
+        </Reveal>
+        <div className="service-cards mt-12">
+          {services.map((service, index) => (
+            <Reveal key={service.id} delay={(index + 1) as 1 | 2 | 3 | 4}>
+              <Link href={service.href} className={`service-card service-card-${tones[index]}`}>
+                <div className="service-card-top"><span>0{index + 1} / {service.shortName.toUpperCase()}</span><span className="service-card-arrow" aria-hidden="true">↗</span></div>
+                <div className="service-card-visual"><ServiceVisual id={service.id} className="h-24 w-full" /></div>
+                <h3 className="font-serif text-2xl tracking-tight md:text-3xl">{service.name}</h3>
+                <p className="mt-3 min-h-[4.5rem] leading-relaxed text-muted">{service.summary}</p>
+                <span className="service-card-link">Explore this service <span aria-hidden="true">→</span></span>
+              </Link>
+            </Reveal>
+          ))}
         </div>
+      </section>
+
+      <section className="audience-band">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-20">
+          <Reveal>
+            <p className="eyebrow eyebrow-light">Built around your business</p>
+            <h2 className="mt-5 max-w-lg font-serif text-4xl tracking-tight text-balance md:text-5xl">Purpose-built software for the way <span>your business runs.</span></h2>
+          </Reveal>
+          <Reveal delay={1}>
+            <p className="text-lg leading-relaxed text-paper/75">We work with teams who understand their business and need software that fits their customers, their day-to-day work, and the way they want to grow.</p>
+            <ul className="mt-7 flex flex-wrap gap-2">{audiences.map((item) => <li key={item} className="audience-pill">{item}</li>)}</ul>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section-pad mx-auto max-w-6xl px-5">
+        <Reveal>
+          <div className="section-heading">
+            <div><p className="eyebrow">A clear way of working</p><h2 className="mt-4 font-serif text-4xl tracking-tight md:text-5xl">A good process makes good work.</h2></div>
+            <p className="max-w-sm leading-relaxed text-muted">We turn the real business need into a clear product plan, then keep the build grounded in how people will use it.</p>
+          </div>
+        </Reveal>
+        <ol className="process-grid mt-12">
+          {process.map((step, index) => (
+            <li key={step.step}>
+              <Reveal delay={(index + 1) as 1 | 2 | 3 | 4}>
+                <span className="process-index">{step.step}</span>
+                <h3 className="mt-5 font-serif text-2xl">{step.title}</h3>
+                <p className="mt-2 max-w-xs leading-relaxed text-muted">{step.text}</p>
+              </Reveal>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <StartBand />

@@ -1,20 +1,19 @@
 export const studio = {
   name: "Bit Axis",
   tagline:
-    "Websites, product design, Android apps, and n8n automation for small and medium businesses.",
+    "Custom SaaS and software solutions for businesses that need tools built around how they work.",
   email: "hello@bitaxis.studio",
   description:
-    "Bit Axis is a product studio for small and medium businesses. We design and build websites, product interfaces, Android apps, and n8n workflows.",
+    "Bit Axis designs and builds custom SaaS products, web apps, Android apps, and connected workflows for businesses.",
 };
 
 export const home = {
-  eyebrow: "Product studio for small and medium businesses",
-  title:
-    "Websites, apps, and workflows for businesses that have outgrown a template.",
-  lead: "Bit Axis designs and builds the site customers see, the product they use, the Android app they open, and the n8n workflows that move work without a person in the middle.",
-  audienceTitle: "For owners who need the thing built",
+  eyebrow: "SaaS products for real business needs",
+  title: "Software built around your business.",
+  lead: "Bit Axis designs and builds custom SaaS products, web apps, Android apps, and connected workflows for businesses.",
+  audienceTitle: "Software built around the way your business works",
   audience:
-    "Clinics, institutes, shops, local service firms, and product teams. If the job is a website, an interface, an Android app, or an automated workflow, it belongs here.",
+    "We help business teams turn real workflows and customer needs into practical software products that are designed to be used every day.",
 };
 
 export const process = [
@@ -58,19 +57,19 @@ export type Service = {
 export const services: Service[] = [
   {
     id: "website",
-    name: "Website development",
-    shortName: "Website",
+    name: "SaaS & web app development",
+    shortName: "SaaS & web apps",
     href: "/services#website",
     tone: "teal",
     summary:
-      "Marketing sites and business web apps, structured so a customer can understand you and a form reaches a person.",
+      "Custom SaaS platforms, customer portals, and business web apps shaped around your workflows and the people who use them.",
     included: [
-      "A site with a clear offer, proof, and a way to get in touch",
-      "Pages for the services or products you actually sell",
-      "A web tool for a daily job, such as bookings, a catalog, or a simple staff view",
-      "Fast pages, and a form that lands in an inbox",
+      "Product scope, user flows, and interface design grounded in a real business need",
+      "A SaaS platform, customer portal, or web app shaped around your service",
+      "The screens and everyday tools your customers or team need to get work done",
+      "A production-ready web experience, with a clear handover for your team",
     ],
-    fits: "Businesses that need a site customers trust, or a web tool the team uses every day. The work is specific to the business, rather than a theme with a logo swapped in.",
+    fits: "Businesses whose customer journey or internal workflow has outgrown spreadsheets, disconnected tools, or off-the-shelf software that does not fit.",
   },
   {
     id: "ui-ux",
@@ -79,14 +78,14 @@ export const services: Service[] = [
     href: "/services#ui-ux",
     tone: "copper",
     summary:
-      "Flows and screens for products people have to use, on the web or on Android.",
+      "Product strategy and interface design that make business software clear and straightforward for customers and staff.",
     included: [
-      "The path from the first screen to the job done",
-      "Interface design for web, Android, or both",
-      "A small set of type, color, and components the build can follow",
-      "Screens written for the person using them",
+      "User journeys based on the tasks people need to complete",
+      "Interface design for SaaS, web apps, and Android products",
+      "A consistent visual system your product can grow with",
+      "Clear, useful screens for customers and the teams supporting them",
     ],
-    fits: "Teams with a product to ship, or an existing one that is hard to use. The work starts from the task, rather than from a mood board.",
+    fits: "Teams building a new SaaS product or improving a product whose users struggle to get things done.",
   },
   {
     id: "android",
@@ -95,14 +94,14 @@ export const services: Service[] = [
     href: "/services#android",
     tone: "azure",
     summary:
-      "Production Android apps for customers or staff who live on a phone.",
+      "Android applications that bring your SaaS product or business service to the devices your customers and team use every day.",
     included: [
-      "An Android app built from a defined product",
-      "The screens and flows people use day to day",
-      "A build you can install, test, and ship",
-      "Handover notes so the app is not a black box",
+      "A product scope and Android app built around real user needs",
+      "Core screens and flows connected to your service or platform",
+      "A build your team can install, test, and prepare to ship",
+      "A clear handover so the app is not a black box",
     ],
-    fits: "Businesses whose customers or staff are on Android. The app follows a clear product, rather than a vague wish to have one.",
+    fits: "Businesses that need customers or staff to access their product and everyday tools on Android.",
   },
   {
     id: "automation",
@@ -111,20 +110,20 @@ export const services: Service[] = [
     href: "/services#automation",
     tone: "violet",
     summary:
-      "n8n workflows that take a form, a WhatsApp message, or a spreadsheet row and finish the job without someone copying it by hand.",
+      "n8n workflows that connect your SaaS product and business tools, so information moves and routine work gets done without manual handoffs.",
     included: [
-      "A map of the work that should run without a person",
-      "n8n workflows that connect forms, mail, WhatsApp, sheets, and your tools",
-      "Approvals, reminders, and follow-ups that fire on time",
-      "A handover so the team can see, pause, and change the flow",
+      "A map of the work and systems that should connect",
+      "n8n workflows between your SaaS product, forms, email, WhatsApp, sheets, and team tools",
+      "Approvals, reminders, and follow-ups that happen at the right time",
+      "A handover so the team can understand and manage each workflow",
     ],
-    fits: "Teams that lose hours to the same handoff: a lead arrives, a staff member copies it, someone forgets to reply. The workflow is the product, not a pile of Zapier recipes nobody owns.",
+    fits: "Teams repeating the same handoffs across tools, or looking to connect a SaaS product with the systems they already rely on.",
   },
 ];
 
 export const inquiryServices = [
-  { id: "website", label: "Website development" },
-  { id: "ui-ux", label: "UI/UX" },
+  { id: "website", label: "SaaS / web app development" },
+  { id: "ui-ux", label: "Product design (UI/UX)" },
   { id: "android", label: "Android development" },
   { id: "automation", label: "n8n automation" },
   { id: "unsure", label: "Not sure yet" },
@@ -161,13 +160,13 @@ export const caseStudies: CaseStudy[] = [
     visitLabel: "Open on Google Play",
     tone: "violet",
     oneLiner:
-      "Practice and school operations, in a product students, teachers, and parents can use.",
+      "An Android exam-prep app that helps competitive-exam aspirants turn spare moments into focused practice.",
     summary:
-      "Quizly is a learning product. Bit Axis shaped the interface and the Android app so practice, results, and everyday school work sit together, instead of being split across chats and spreadsheets.",
-    audience: "Schools, coaching teams, students, and parents.",
+      "Quizly gives exam aspirants a focused place to practise topic-based questions, work through previous-year questions, generate AI quizzes, and take timed mock tests.",
+    audience: "Aspirants preparing for UPSC, SSC, banking, railways, GATE, and other competitive exams.",
     built: [
-      "Product interface for practice, results, and school workflows",
-      "Android app for the people who use it day to day",
+      "Android app for focused competitive-exam preparation",
+      "Practice flows for topic quizzes, previous-year questions, and timed mock tests",
     ],
     services: ["ui-ux", "android"],
   },
@@ -177,12 +176,15 @@ export const caseStudies: CaseStudy[] = [
     url: "https://whyeka.com/",
     visitLabel: "Visit whyeka.com",
     tone: "ink",
-    oneLiner: "A product Bit Axis designed and built.",
+    oneLiner: "A clear digital home for a LinkedIn positioning and thought-leadership offer.",
     summary:
-      "Whyeka is portfolio work from the studio. The audience, the problem, and what shipped are still being written, so this page does not guess.",
-    audience: "",
-    built: [],
-    services: [],
+      "Whyeka helps founders and business leaders sharpen their positioning and build influence on LinkedIn. Bit Axis designed and built a web experience that explains the offer and guides prospective clients toward a discovery conversation.",
+    audience: "Founders and business leaders who want a clear market position and stronger visibility with the people they need to reach.",
+    built: [
+      "A clear web presence for Whyeka's positioning and LinkedIn strategy offer",
+      "Service information and a direct path to book a discovery call",
+    ],
+    services: ["website", "ui-ux"],
   },
 ];
 

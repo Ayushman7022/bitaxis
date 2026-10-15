@@ -14,14 +14,14 @@ export function StartBand() {
         <div>
           <p className="text-xs tracking-[0.18em] uppercase opacity-70">Next</p>
           <h2 className="mt-3 max-w-xl font-serif text-4xl leading-[1.05] tracking-tight text-balance md:text-5xl">
-            Tell us what you need built.
+            Let&apos;s shape the right software for your business.
           </h2>
         </div>
         <Link
           href="/contact"
           className="inline-flex w-fit bg-paper px-5 py-3 text-sm text-ink transition-transform duration-200 hover:-translate-y-0.5"
         >
-          Start a project
+          Talk about your product
         </Link>
       </div>
     </section>

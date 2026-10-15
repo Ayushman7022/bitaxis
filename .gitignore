@@ -32,7 +32,6 @@ yarn-error.log*
 
 # env files — never commit secrets or the Apps Script webhook
 .env*
-!.env.example
 .env.local
 
 # vercel

@@ -7,7 +7,7 @@ import { studio } from "@/content/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Send Bit Axis a project brief for a website, a product interface, an Android app, or an n8n workflow.",
+    "Tell Bit Axis what your business needs from a SaaS product, web app, Android app, or connected workflow.",
 };
 
 export default function ContactPage() {
@@ -17,11 +17,11 @@ export default function ContactPage() {
         <Reveal>
           <p className="text-xs tracking-[0.18em] text-teal uppercase">Contact</p>
           <h1 className="mt-4 font-serif text-5xl leading-[0.98] tracking-tight text-balance md:text-6xl">
-            Start a project.
+            Tell us what your business needs.
           </h1>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-            Say what you need: a website, a product interface, an Android app, an
-            n8n workflow, or that you are not sure yet.
+            Share the problem you want software to solve. We can help shape the
+            right SaaS product, web or Android app, or connected workflow.
           </p>
           <div className="mt-10 flex items-center gap-4">
             <AxisMark className="h-12 w-12 text-teal" />
