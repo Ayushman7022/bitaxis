@@ -1,3 +1,35 @@
+# Only the website is published from this repo:
+#   index.html, privacy.html, bitaxiss-ad2-16x9.mp4, poster.jpg
+
+# Marketing assets (local only)
 logo/
 ads/
 instagram/
+
+# n8n automation work (local only)
+automation/
+workflows/
+.n8nac/
+n8nac-config.json
+.agents/
+.github/agents/
+AGENTS.md
+
+# Google Apps Script source (lives in Google, not on the site)
+*.gs
+
+# Secrets: never commit
+n8nautomation-*.json
+*service-account*.json
+.env
+.env.*
+*.pem
+*.key
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
