@@ -1,35 +1,37 @@
-# Only the website is published from this repo:
-#   index.html, privacy.html, bitaxiss-ad2-16x9.mp4, poster.jpg
+# ─────────────────────────────────────────────────────────────
+# ALLOW-LIST: this public repo publishes the website only.
+# Everything is ignored by default; only the files below are
+# allowed. To publish a new site file, add a "!" line for it.
+# ─────────────────────────────────────────────────────────────
 
-# Marketing assets (local only)
-logo/
-ads/
-instagram/
+# 1. Ignore everything in the project folder…
+/*
 
-# n8n automation work (local only)
-automation/
-workflows/
-.n8nac/
-n8nac-config.json
-.agents/
-.github/agents/
-AGENTS.md
+# 2. …except the website files
+!/.gitignore
+!/index.html
+!/privacy.html
+!/poster.jpg
+!/bitaxiss-ad2-16x9.mp4
 
-# Google Apps Script source (lives in Google, not on the site)
+# 3. Images used in automated emails (served from www.bitaxis.in/email/)
+!/email/
+/email/*
+!/email/*.jpg
+!/email/*.png
+
+# ─────────────────────────────────────────────────────────────
+# Safety net: never commit these, even if allowed above
+# ─────────────────────────────────────────────────────────────
+*.pdf
+*recovery*
+*.json
 *.gs
-
-# Secrets: never commit
-n8nautomation-*.json
-*service-account*.json
 .env
 .env.*
 *.pem
 *.key
-
-# OS / editor clutter
 .DS_Store
 Thumbs.db
 desktop.ini
-.vscode/
-.idea/
 *.log
